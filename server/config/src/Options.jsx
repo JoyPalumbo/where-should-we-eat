@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import OptionItem from './OptionItem.jsx';
+import OptionItem from './OptionItem.jsx.js';
 
 /**
  * Renders five options from a Yelp API call for

@@ -3,19 +3,19 @@ import React from 'react';
 import axios from 'axios';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import RemoveUserForm from './RemoveUserForm.jsx';
-import Preferences from './Preferences.jsx';
-import SignIn from './SignIn.jsx';
-import Header from './Header.jsx';
-import Home from './Home.jsx';
-import CreateGroup from './CreateGroup.jsx';
-import UserSettings from './UserSettings.jsx';
-import Group from './Group.jsx';
-import AddUserForm from './AddUserForm.jsx';
-import Options from './Options.jsx';
+import RemoveUserForm from './RemoveUserForm.jsx.js';
+import Preferences from './Preferences.jsx.js';
+import SignIn from './SignIn.jsx.js';
+import Header from './Header.jsx.js';
+import Home from './Home.jsx.js';
+import CreateGroup from './CreateGroup.jsx.js';
+import UserSettings from './UserSettings.jsx.js';
+import Group from './Group.jsx.js';
+import AddUserForm from './AddUserForm.jsx.js';
+import Options from './Options.jsx.js';
 import './App.css';
-import Title from './TitlePage.jsx';
-import AltHeader from './AltHeader.jsx';
+import Title from './TitlePage.jsx.js';
+import AltHeader from './AltHeader.jsx.js';
 
 /**
  * these are the avatar options a user can select from when creting an account
@@ -252,6 +252,18 @@ class App extends React.Component {
     });
   }
 
+  placeRandomizer() {
+    const { options } = this.state;
+    const optionIndex = Math.floor(Math.random() * (options.length));
+    // const theChoice = options[optionIndex].userName;
+    // this.setState({ chooser: theChosen, showWinner: true });
+    // axios.post((`/api/groups/${groupName}`)).then(() => {
+    //   console.log('hey');
+    // }).catch(() => {
+    //   this.toggleDialog();
+    // });
+  }
+
   handlePreferenceChange(k, v) {
     this.setState({ [k]: v });
   }
@@ -305,7 +317,7 @@ class App extends React.Component {
   // handlePass() {
   //   // this.setState()
   //   this.handleViewChange('group');
-    
+
   // }
 
   handleNewGroupMember(e) {
@@ -390,128 +402,128 @@ class App extends React.Component {
      */
     let View;
     if (view === '/login') {
-      View = <SignIn handleSignInWithGoogle={handleSignInWithGoogle}/>;
+      View = <SignIn handleSignInWithGoogle={handleSignInWithGoogle} />;
     } else if (view === '/profile') {
       View = <Preferences
-              koala={'https://cdn.discordapp.com/attachments/635332255178424335/661017399109353505/image4.jpg'}
-              oppossum={'https://cdn.discordapp.com/attachments/635332255178424335/661017399109353502/image3.jpg'}
-              bilby={'https://cdn.discordapp.com/attachments/635332255178424335/661017398496854074/image1.jpg'}
-              kangaroo={'https://cdn.discordapp.com/attachments/635332255178424335/661017398496854075/image2.jpg'}
-              sugarGlider={'https://cdn.discordapp.com/attachments/635332255178424335/661017398068903937/image0.jpg'}
-              handleDietaryRestrictionsSetState={handleDietaryRestrictionsSetState}
-              handleUserStatusInput={handleUserStatusInput}
-              handleSignInWithGoogle={handleSignInWithGoogle}
-              handleSetState={handleSetState}
-              handleViewChange={handleViewChange}
-              handlePreferenceChange={handlePreferenceChange}
-              handleSubmitPreferences={handleSubmitPreferences}
-              handleUserNameInput={handleUserNameInput}
-              userImages={userImages}/>;
+        koala={'https://cdn.discordapp.com/attachments/635332255178424335/661017399109353505/image4.jpg'}
+        oppossum={'https://cdn.discordapp.com/attachments/635332255178424335/661017399109353502/image3.jpg'}
+        bilby={'https://cdn.discordapp.com/attachments/635332255178424335/661017398496854074/image1.jpg'}
+        kangaroo={'https://cdn.discordapp.com/attachments/635332255178424335/661017398496854075/image2.jpg'}
+        sugarGlider={'https://cdn.discordapp.com/attachments/635332255178424335/661017398068903937/image0.jpg'}
+        handleDietaryRestrictionsSetState={handleDietaryRestrictionsSetState}
+        handleUserStatusInput={handleUserStatusInput}
+        handleSignInWithGoogle={handleSignInWithGoogle}
+        handleSetState={handleSetState}
+        handleViewChange={handleViewChange}
+        handlePreferenceChange={handlePreferenceChange}
+        handleSubmitPreferences={handleSubmitPreferences}
+        handleUserNameInput={handleUserNameInput}
+        userImages={userImages} />;
     } else if (view === '/createGroup') {
       View = <CreateGroup
-                handleViewChange={handleViewChange}
-                handleNewGroupName={handleNewGroupName}
-                handlePreferenceChange={handlePreferenceChange}
-                handleSetState={handleSetState}
-                handleNewGroupPricePoint={handleNewGroupPricePoint}
-                handleNewGroupSubmit={handleNewGroupSubmit}
-                handleAddUserToGroup={handleAddUserToGroup}
-                koala={'https://cdn.discordapp.com/attachments/635332255178424335/661017399109353505/image4.jpg'}
-                oppossum={'https://cdn.discordapp.com/attachments/635332255178424335/661017399109353502/image3.jpg'}
-                bilby={'https://cdn.discordapp.com/attachments/635332255178424335/661017398496854074/image1.jpg'}
-                kangaroo={'https://cdn.discordapp.com/attachments/635332255178424335/661017398496854075/image2.jpg'}
-                sugarGlider={'https://cdn.discordapp.com/attachments/635332255178424335/661017398068903937/image0.jpg'}
-                handleDietaryRestrictionsSetState={handleDietaryRestrictionsSetState}
-                handleUserStatusInput={handleUserStatusInput}
-                handleSignInWithGoogle={handleSignInWithGoogle}
-                handleSubmitPreferences={handleSubmitPreferences}
-                users={users}
-                handleUserNameInput={handleUserNameInput}/>;
+        handleViewChange={handleViewChange}
+        handleNewGroupName={handleNewGroupName}
+        handlePreferenceChange={handlePreferenceChange}
+        handleSetState={handleSetState}
+        handleNewGroupPricePoint={handleNewGroupPricePoint}
+        handleNewGroupSubmit={handleNewGroupSubmit}
+        handleAddUserToGroup={handleAddUserToGroup}
+        koala={'https://cdn.discordapp.com/attachments/635332255178424335/661017399109353505/image4.jpg'}
+        oppossum={'https://cdn.discordapp.com/attachments/635332255178424335/661017399109353502/image3.jpg'}
+        bilby={'https://cdn.discordapp.com/attachments/635332255178424335/661017398496854074/image1.jpg'}
+        kangaroo={'https://cdn.discordapp.com/attachments/635332255178424335/661017398496854075/image2.jpg'}
+        sugarGlider={'https://cdn.discordapp.com/attachments/635332255178424335/661017398068903937/image0.jpg'}
+        handleDietaryRestrictionsSetState={handleDietaryRestrictionsSetState}
+        handleUserStatusInput={handleUserStatusInput}
+        handleSignInWithGoogle={handleSignInWithGoogle}
+        handleSubmitPreferences={handleSubmitPreferences}
+        users={users}
+        handleUserNameInput={handleUserNameInput} />;
     } else if (view === '/home') {
       View = <Home
-                groups={groups}
-                user={user}
-                getGroupMembers={getGroupMembers}
-                getGroupPricePoint={getGroupPricePoint}
-                handleViewChange={handleViewChange}
-                handleGroupSetState={handleGroupSetState}/>;
+        groups={groups}
+        user={user}
+        getGroupMembers={getGroupMembers}
+        getGroupPricePoint={getGroupPricePoint}
+        handleViewChange={handleViewChange}
+        handleGroupSetState={handleGroupSetState} />;
     } else if (view === '/userSetting') {
       View = <UserSettings
-                koala={'https://cdn.discordapp.com/attachments/635332255178424335/661017399109353505/image4.jpg'}
-                oppossum={'https://cdn.discordapp.com/attachments/635332255178424335/661017399109353502/image3.jpg'}
-                bilby={'https://cdn.discordapp.com/attachments/635332255178424335/661017398496854074/image1.jpg'}
-                kangaroo={'https://cdn.discordapp.com/attachments/635332255178424335/661017398496854075/image2.jpg'}
-                sugarGlider={'https://cdn.discordapp.com/attachments/635332255178424335/661017398068903937/image0.jpg'}
-                handleDietaryRestrictionsSetState={handleDietaryRestrictionsSetState}
-                handleUserStatusInput={handleUserStatusInput}
-                handleSignInWithGoogle={handleSignInWithGoogle}
-                handleSetState={handleSetState}
-                handleViewChange={handleViewChange}
-                handlePreferenceChange={handlePreferenceChange}
-                handleSubmitPreferences={handleSubmitPreferences}
-                handleUserNameInput={handleUserNameInput}
-                userImages={userImages}/>;
+        koala={'https://cdn.discordapp.com/attachments/635332255178424335/661017399109353505/image4.jpg'}
+        oppossum={'https://cdn.discordapp.com/attachments/635332255178424335/661017399109353502/image3.jpg'}
+        bilby={'https://cdn.discordapp.com/attachments/635332255178424335/661017398496854074/image1.jpg'}
+        kangaroo={'https://cdn.discordapp.com/attachments/635332255178424335/661017398496854075/image2.jpg'}
+        sugarGlider={'https://cdn.discordapp.com/attachments/635332255178424335/661017398068903937/image0.jpg'}
+        handleDietaryRestrictionsSetState={handleDietaryRestrictionsSetState}
+        handleUserStatusInput={handleUserStatusInput}
+        handleSignInWithGoogle={handleSignInWithGoogle}
+        handleSetState={handleSetState}
+        handleViewChange={handleViewChange}
+        handlePreferenceChange={handlePreferenceChange}
+        handleSubmitPreferences={handleSubmitPreferences}
+        handleUserNameInput={handleUserNameInput}
+        userImages={userImages} />;
     } else if (view === '/group') {
       View = <Group user={user}
-                userImages={userImages}
-                group={group} groupName={groupName}
-                groupMembers={members}
-                pricePoint={pricePoint}
-                handleGetOptions={handleGetOptions}
-                handleCategoriesInput={handleCategoriesInput}
-                getGroupMembers={getGroupMembers}
-                getGroupPricePoint={getGroupPricePoint}
-                handleViewChange={handleViewChange}
-                randomizer={randomizer}
-                chooser={chooser}
-                showWinner={showWinner}
-                directionsPopup={directionsPopup}
-                toggleDialog={toggleDialog}
-                choiceAddress={choiceAddress}
-                users={users}
-                choiceName={choiceName}/>;
+        userImages={userImages}
+        group={group} groupName={groupName}
+        groupMembers={members}
+        pricePoint={pricePoint}
+        handleGetOptions={handleGetOptions}
+        handleCategoriesInput={handleCategoriesInput}
+        getGroupMembers={getGroupMembers}
+        getGroupPricePoint={getGroupPricePoint}
+        handleViewChange={handleViewChange}
+        randomizer={randomizer}
+        chooser={chooser}
+        showWinner={showWinner}
+        directionsPopup={directionsPopup}
+        toggleDialog={toggleDialog}
+        choiceAddress={choiceAddress}
+        users={users}
+        choiceName={choiceName} />;
     } else if (view === '/addUserToGroup') {
       View = <AddUserForm
-      users={users} tempMember={tempMember}
-                handleViewChange={handleViewChange}
-                handleNewGroupMember={handleNewGroupMember}
-                handleAddUserToGroup={handleAddUserToGroup} />;
+        users={users} tempMember={tempMember}
+        handleViewChange={handleViewChange}
+        handleNewGroupMember={handleNewGroupMember}
+        handleAddUserToGroup={handleAddUserToGroup} />;
     } else if (view === '/removeUserFromGroup') {
       View = <RemoveUserForm
-      users={users} tempMember={tempMember}
-                handleViewChange={handleViewChange}
-                handleNewGroupMember={handleNewGroupMember}
-                handleRemoveUserFromGroup={handleRemoveUserFromGroup} />;
+        users={users} tempMember={tempMember}
+        handleViewChange={handleViewChange}
+        handleNewGroupMember={handleNewGroupMember}
+        handleRemoveUserFromGroup={handleRemoveUserFromGroup} />;
     } else if (view === '/options') {
       View = <Options
-                options={options}
-                handlePass={handlePass}
-                handleChooseOption={handleChooseOption}/>;
+        options={options}
+        handlePass={handlePass}
+        handleChooseOption={handleChooseOption} />;
     } else {
       View = <Home
-                groups={groups}
-                getGroupMembers={getGroupMembers}
-                handleViewChange={handleViewChange}
-                handleGroupSetState={handleGroupSetState}
-                userImage={userImage}/>;
+        groups={groups}
+        getGroupMembers={getGroupMembers}
+        handleViewChange={handleViewChange}
+        handleGroupSetState={handleGroupSetState}
+        userImage={userImage} />;
 
 
       View = <Title handleViewChange={handleViewChange} />;
     }
 
     return (
-            <div>
-               <div>
-                 <Header handleViewChange={handleViewChange} handleSignInWithGoogle={handleLoginClick} handleSignOutWithGoogle={handleSignOutWithGoogle} />
-              </div>
-                <Dialog onBackdropClick={() => { toggleDialog(); }} open={this.state.open}>
-                    <DialogTitle>Sorry {user} an error has occurred</DialogTitle>
-                </Dialog>
-                <Dialog onBackdropClick={() => { toggleLoginDialog(); }} open={this.state.login}>
-                    <DialogTitle>Welcome {user} You have signed in</DialogTitle>
-                </Dialog>
-                {View}
+      <div>
+        <div>
+          <Header handleViewChange={handleViewChange} handleSignInWithGoogle={handleLoginClick} handleSignOutWithGoogle={handleSignOutWithGoogle} />
         </div>
+        <Dialog onBackdropClick={() => { toggleDialog(); }} open={this.state.open}>
+          <DialogTitle>Sorry {user} an error has occurred</DialogTitle>
+        </Dialog>
+        <Dialog onBackdropClick={() => { toggleLoginDialog(); }} open={this.state.login}>
+          <DialogTitle>Welcome {user} You have signed in</DialogTitle>
+        </Dialog>
+        {View}
+      </div>
 
     );
   }

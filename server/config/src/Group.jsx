@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Link from '@material-ui/core/Link';
-import GroupMember from './GroupMember.jsx';
+import GroupMember from './GroupMember.jsx.js';
 
 /**
  * This is the component that is rendered when a user clicks on one of their groups
