@@ -1,0 +1,4 @@
+//google geolocation api key
+const yelpApiToken = 'wZxlN7aRs_KTOCktN1YG70OZrQrfRhs1SZl8xbXQ0vajAqMWCeGqVSjKh4MOv8ELJ0cY04kh8Q3ITp1Z2-hm5WEXXZnBCrRR2TFfZZT8nBNBJ0X9k2ObJ6L7mKUTXnYx';
+
+const googleApiKey = 'AIzaSyD73-MXSbBJCmdAelK8ZMlRMqBxuGEa7_8';
